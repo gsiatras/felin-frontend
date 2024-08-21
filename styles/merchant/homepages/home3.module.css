@@ -1,0 +1,199 @@
+/*---------------------------------------
+#. Third Page Home
+---------------------------------------*/
+
+/* BEM Element and Modifier */
+
+.felin-third-page {
+background-color: var(--white-color); 
+flex: 1; 
+display: flex;
+align-items: center;
+justify-content: center; 
+margin-bottom: var(--margin-bottom-big);
+}
+
+.felin-third-page__content {
+display: flex;
+flex-direction: column;
+max-width: none;
+width: 90%;
+text-align: center;
+color: var(--dark-color); 
+align-items: center; 
+margin-top: 60px;
+margin-right: auto;
+margin-left: auto; 
+font-family: -apple-system, BlinkMacSystemFont, Roboto, "Segoe UI", Arimo, "Open Sans", sans-serif;
+}
+
+.felin-third-page__heading {
+color: #000;
+font-size: 45px;
+font-weight: 700;
+font-family: 'Geologica', -apple-system, BlinkMacSystemFont, Roboto, "Segoe UI", Arimo, "Open Sans", sans-serif; 
+margin-bottom: 50px; /* Space between heading and the first box */
+}
+
+.felin-third-page__box-container {
+display: flex;
+justify-content: space-between;
+width: 100%;
+max-width: 1200px;
+flex-wrap: wrap; /* Allows items to wrap to the next line on small screens */
+}
+
+.felin-third-page__box {
+background-color: #f7f7f7;
+border-radius: 15px;
+padding: 20px;
+text-align: center;
+flex: 1;
+margin: 10px;
+max-width: 35%; /* Limits the width of each box on large screens */
+display: flex;
+flex-direction: column;
+justify-content: flex-start; /* Aligns content from the top */
+}
+
+
+.box-blue {
+  background-color: var(--page-three-color-blue);
+}
+
+.box-green {
+  background-color: var(--page-three-color-green);
+}
+
+.box-purple {
+  background-color: var(--page-three-color-purple);
+}
+
+
+
+
+.felin-third-page__box-image-container {
+height: 18.75rem; /* Fixed height for the image container */
+margin-bottom: 20px; /* Space between image and subtitle */
+display: flex;
+justify-content: center;
+align-items: center;
+overflow: hidden; /* Ensures no overflow outside the container */
+}
+
+.felin-third-page__box-image {
+width: 100%; /* Ensures image fills the container width */
+height: 100%; /* Ensures image fills the container height */
+object-fit: cover; /* Ensures the image covers the container without distortion */
+border-radius: 10px; /* Optional: Rounded corners for the image */
+}
+
+.felin-third-page__box-subtitle {
+color: #000;
+font-size: 24px;
+font-weight: 500;
+font-family: 'Geologica', -apple-system, BlinkMacSystemFont, Roboto, "Segoe UI", Arimo, "Open Sans", sans-serif;
+margin-bottom: 15px; /* Space between subtitle and text */
+}
+
+.felin-third-page__box-text {
+  font-size: 15px;
+  color: rgba(32, 33, 37, 0.64);
+  font-family: -apple-system, BlinkMacSystemFont, Roboto, "Segoe UI", Arimo, "Open Sans", sans-serif;
+  margin-bottom: 15px; /* Space after the text */
+}
+
+/* Media Queries for Responsiveness */
+
+
+
+@media only screen and (max-width: 840px) {
+  .felin-third-page__box-container {
+      flex-direction: column; /* Stacks boxes in a column on narrow screens */
+      align-items: center; /* Center-aligns boxes horizontally */
+  }
+
+  .felin-third-page__box {
+      margin: 10px 0; /* Adds vertical space between boxes */
+      max-width: 100%;
+  }
+
+  .felin-third-page__heading {
+      font-size: 40px;
+  }
+
+
+  .felin-third-page__box-subtitle {
+      font-size: 20px;
+  }
+
+  .felin-third-page__box-text {
+      font-size: 14px;
+  }
+
+  .felin-third-page__content {
+      max-width: var(--max-width);
+  }
+
+
+}
+
+@media only screen and (max-width: 480px) {
+  .felin-third-page__heading {
+      font-size: 26px;
+  }
+
+}
+
+/* Media Queries for Responsiveness */
+
+
+
+@media only screen and (max-width: 840px) {
+    .felin-third-page__box-container {
+    flex-direction: column; /* Stacks boxes in a column on narrow screens */
+    align-items: center; /* Center-aligns boxes horizontally */
+    }
+
+    .felin-third-page__box {
+    margin: 10px 0; /* Adds vertical space between boxes */
+    max-width: 100%;
+    }
+
+    .felin-third-page__heading {
+    font-size: 40px;
+    }
+
+
+    .felin-third-page__box-subtitle {
+    font-size: 20px;
+    }
+
+    .felin-third-page__box-text {
+    font-size: 14px;
+    }
+
+    .felin-third-page__content {
+    width: 100%;
+    }
+}
+
+@media only screen and (max-width: 479px) {
+    .felin-third-page__heading {
+        font-size: 26px;
+    }
+
+    .felin-third-page__content {
+        max-width: var(--max-width);
+    }
+
+    .felin-third-page {
+        
+        margin-bottom: var(--margin-bottom-small);
+    }
+
+    .felin-third-page__text1 {
+        font-size: 14.4px;
+      }
+
+}

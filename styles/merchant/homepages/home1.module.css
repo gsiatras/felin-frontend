@@ -1,0 +1,283 @@
+
+/*---------------------------------------
+#. First Page Home
+---------------------------------------*/
+
+/* BEM Element and Modifier */
+
+.felin-first-page {
+  background-color: var(--white-color); 
+  flex: 1; 
+  display: flex;
+  align-items: center;
+  justify-content: center; /* Center the content horizontally */
+  margin-bottom: var(--margin-bottom-big);
+  font-family: -apple-system, BlinkMacSystemFont, Roboto, "Segoe UI", Arimo, "Open Sans", sans-serif;
+}
+
+.felin-first-page__content {
+  display: flex;
+  flex-direction: column; /* Default to column layout for small screens */
+  max-width: var(--max-width); /* Ensure the content doesn't stretch too wide */
+  width: 100%; /* Make sure content takes full width */
+  text-align: center; /* Center text */
+  color: var(--dark-color); 
+  align-items: center; /* Center items horizontally */
+  margin-top: 60px;
+}
+
+.felin-text-button__wrapper {
+  flex: 2;
+  max-width: 100%; 
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center items horizontally */
+}
+
+.felin-first-page__title {
+  color: #000;
+  font-size: 56.25px;
+  font-weight: 700;
+  font-family: 'Geologica', -apple-system, BlinkMacSystemFont, Roboto, "Segoe UI", Arimo, "Open Sans", sans-serif; 
+  margin-left: 30px;
+  margin-bottom: 20px;
+}
+
+.felin-first-page__text {
+  display: flex;
+  align-self: center; 
+  text-align: center; 
+  margin-left: 30px;
+  font-family: -apple-system, BlinkMacSystemFont, Roboto, "Segoe UI", Arimo, "Open Sans", sans-serif;
+  margin-top: 30px;
+  margin-bottom: 10px;
+  color: var(--home-text-color);
+  font-weight: 400;
+  font-size: 18px;
+}
+
+.felin-first-page__image {
+  flex: 1; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 100%;
+  border-radius: 20px;
+  overflow: hidden; 
+}
+
+.felin-first-page__image-img {
+  width: 100%; 
+  height: 100%; 
+  max-height: 100%; 
+  display: block;
+}
+
+
+.felin-first-page__text-2 {
+  font-size: 12px; 
+  font-weight: 500;
+  padding-top: 20px; 
+  text-align: center; 
+  font-family: -apple-system, BlinkMacSystemFont, Roboto, "Segoe UI", Arimo, "Open Sans", sans-serif;
+}
+
+/* .white-icon {
+  filter: invert(1); 
+} */
+
+.felin-first-page__trusted_by {
+  padding: 20px; /* Add padding around the section */
+  display: flex; /* Use flexbox to align items */
+  flex-direction: row; /* Default to row layout */
+  align-items: center; /* Center items vertically */
+  width: 100%; /* Make sure the section takes the full width */
+  box-sizing: border-box; /* Include padding in the width calculation */
+  margin-bottom: 30px;
+  justify-content: space-between;
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+}
+
+.felin-first-page__trusted_by h1 {
+  font-size: 24px; /* Adjust the font size */
+  color: var(--dark-color); /* Text color */
+  margin: 0; /* Remove default margin */
+  flex: 1; /* Allow heading to take available space */
+}
+
+.felin-trusted-by__icons {
+  display: flex; /* Use flexbox for row layout */
+  gap: 20px; /* Space between icons */
+  align-items: center; /* Center items vertically */
+  flex: 2; /* Allow icons to take available space */
+  justify-content: space-between;
+}
+
+.felin-trusted-by__icon {
+  background-color: var(--white-color); /* Background color for each icon */
+  border-radius: 50%; /* Round the background */
+  padding: 10px; /* Add padding around the icon */
+  display: flex; /* Flexbox for centering icon and text */
+  flex-direction: column; /* Stack icon and text vertically */
+  align-items: center; /* Center items horizontally */
+  justify-content: center; /* Center items vertically */
+  width: 60px; /* Adjust width */
+  height: 60px; /* Adjust height */
+}
+
+.felin-trusted-by__icon img {
+  width: 100%; /* Make the image fill its container */
+  height: auto; /* Maintain aspect ratio */
+}
+
+.icon-name {
+  color: var(--dark-color); /* Text color */
+  font-size: 12px; /* Adjust font size */
+  margin-top: 5px; /* Space between icon and text */
+}
+
+
+
+@media (min-width: 1200px) {
+  .felin-first-page__content {
+    flex-direction: row; /* Arrange items in a row for larger screens */
+    align-items: center; /* Center items vertically */
+    justify-content: space-between; /* Distribute space between items */
+  }
+
+  .felin-text-button__wrapper,
+  .felin-first-page__image {
+    flex: 1; /* Allow both sections to take equal space */
+    max-width: 50%; /* Limit width to 50% */
+  }
+
+  .felin-text-button__wrapper {
+    margin-right: 20px; /* Space between text and video */
+  }
+
+}
+
+@media only screen and (max-width: 1199px) {
+  .felin-first-page__title {
+    font-size: 54.25px;
+    margin-left: 0;
+  }
+
+  .felin-first-page__content {
+    flex-direction: column; /* Stack items vertically */
+    align-items: center; /* Center items horizontally */
+    justify-content: center; /* Center items vertically */
+    text-align: center; /* Center text */
+    margin-right: 0px;
+  }
+
+  .felin-first-page__title {
+    margin-bottom: 50px;
+    font-size: 45px;
+    line-height: 1.2;
+    margin-top: 20px;
+  }
+
+  .felin-first-page__text{
+    margin-left: 0;
+  }
+
+  .felin-first-page__trusted_by {
+    border-radius: 20px;
+  }
+
+  .felin-first-page__image {
+    max-width: 85%; 
+  }
+}
+
+@media (max-width: 899px) {
+  .felin-first-page__trusted_by {
+    flex-direction: column; /* Stack items vertically */
+    align-items: center; /* Center items horizontally */
+    margin-bottom: 20px; /* Reduce bottom margin for smaller screens */
+    padding: 10px; /* Reduce padding for smaller screens */
+  }
+
+  .felin-first-page__trusted_by h1 {
+    font-size: 18px; /* Smaller font size */
+    margin-bottom: 10px; /* Space below heading */
+  }
+
+  .felin-trusted-by__icons {
+    flex-direction: row; /* Keep icons in a row */
+    gap: 10px; /* Reduce space between icons */
+  }
+
+  .felin-trusted-by__icon {
+    width: 50px; /* Adjust size for mobile */
+    height: 50px; /* Adjust size for mobile */
+  }
+
+  .icon-name {
+    font-size: 10px; /* Smaller font size */
+    margin-top: 3px; /* Space between icon and text */
+  }
+
+  .felin-first-page__title {
+    margin-bottom: 20px;
+    font-size: 46px;
+    line-height: 1.2;
+    margin-top: 10px;
+  }
+
+  .felin-first-page__text {
+    font-size: 16px;
+  }
+
+  .felin-first-page__text-2 {
+    font-size: 14px;
+    padding-top: 12px;
+  }
+}
+
+@media only screen and (max-width: 479px) {
+  .felin-first-page {
+    margin-bottom: var(--margin-bottom-small);
+  }
+
+  .felin-first-page__title {
+    font-size: 36.8px;
+  }
+
+  .felin-first-page__content {
+    margin-top: 60px;
+  }
+
+  .felin-first-page__text {
+    margin-bottom: 20px;
+    font-size: 14.4px;
+  }
+
+  .felin-first-page__text-2 {
+    font-size: 12.5px;
+  }
+
+  .felin-first-page__main_content {
+    margin-bottom: 20px;
+  }
+
+  .felin-text-button__wrapper {
+    display: flex;
+    flex-direction: column; 
+    text-align: center; 
+    color: var(--dark-color); 
+    align-items: center; 
+    max-width: 100%;
+  }
+
+  .felin-first-page__content {
+    max-width: var(--max-width);
+  }
+
+  .felin-first-page__image {
+    max-width: 100%;
+  }
+  
+}

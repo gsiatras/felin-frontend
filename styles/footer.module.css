@@ -1,0 +1,290 @@
+/*---------------------------------------
+#. Footer
+---------------------------------------*/
+
+/* BEM Element and Modifier */
+
+.felin-footer {
+    background-color: black;
+    color: white;
+    padding: 100px 0 20px 40px;
+    display: flex;
+    justify-content: flex-start; /* Align content to the left */
+    align-items: flex-start;
+    flex-wrap: wrap;
+    width: 100%; /* Ensure full width */
+  }
+  
+  .felin-footer__content {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 95%;
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, Roboto, "Segoe UI", Arimo, "Open Sans", sans-serif;
+  }
+  
+  .felin-footer__main {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding-bottom: 60px;
+    width: 100%; /* Ensure full width */
+  }
+  
+  .felin-footer__section {
+    flex: 1;
+    margin: 0 20px;
+    text-align: left; /* Center align the text */
+  }
+  
+  .felin-footer__title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Ensure space between items */
+    width: 100%; /* Ensure it takes up full width */
+    cursor: pointer;
+  }
+  
+  
+  .felin-footer__title h3{
+    font-size: 1.125rem;
+    margin-bottom: 20px;
+    line-height: 1.5rem;
+    font-weight: 500;
+    font-family: -apple-system, BlinkMacSystemFont, Roboto, "Segoe UI", Arimo, "Open Sans", sans-serif;
+    color: rgba(255, 255, 255, 0.64);
+  }
+  
+  .felin-footer__arrow {
+    display: none; /* Hidden by default */
+    transition: transform 0.3s ease; /* Smooth rotation effect */
+    color: white;
+  }
+  
+  
+  .felin-footer__list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    opacity: 1; /* Fully visible by default */
+    max-height: none; /* No height constraint */
+    overflow: visible; /* Ensure content is visible */
+    transition: opacity 0.3s ease, max-height 0.3s ease;
+  }
+  
+  .felin-footer__section.active .felin-footer__list {
+    opacity: 1; /* Fully visible */
+    max-height: 500px; /* Adjust to fit the height of your content */
+  }
+  
+  .felin-footer__item {
+    margin-bottom: 10px;
+  }
+  
+  .felin-footer__link {
+    color: white;
+    text-decoration: none;
+    transition: opacity 0.3s ease, max-height 0.3s ease;
+  }
+  
+  .felin-footer__link:hover {
+    color: var(--white-color);
+  } 
+  
+  .felin-footer__section--brand {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+  
+  .felin-footer__brand-logos {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-right: 30px;
+    gap: 10px;
+  }
+  
+  .felin-footer__logo-image {
+    width: 135px;
+  }
+  
+  .felin-footer___logo_title {
+    color: var(--white-color);
+  }
+  
+  .felin-footer__section--additional {
+    width: 100%; /* Full width for the additional section */
+    text-align: center;
+  }
+  
+  .felin-footer__additional-links {
+    display: flex;
+    flex-wrap: wrap; /* Allows wrapping of elements */
+    justify-content: space-between; /* Distribute space evenly */
+    margin-bottom: 10px;
+    gap: 10px;
+    max-width: 100%; /* Ensure it stays within the screen */
+  }
+  
+  .felin-footer__additional-link-row {
+    display: flex; /* Use flexbox for layout */
+    flex-wrap: wrap; /* Prevent wrapping */
+    align-items: center; /* Center align items vertically if needed */
+    white-space: nowrap;
+    gap: 25px;
+    max-width: calc(100% - 20px); /* Max width minus padding to prevent overflow */
+    font-size: 13px; /* Smaller font size */
+    cursor: pointer;
+    margin-right: 0; /* Remove the margin to prevent overflow */
+  }
+  
+  .felin-footer__additional-link-row svg {
+    width: 16px; /* Adjusted SVG size */
+    height: 16px; /* Adjusted SVG size */
+    margin-right: 5px; /* Add some space between SVG and text */
+  }
+  
+  .felin-footer__additional-footer {
+    display: flex; /* Use flexbox for alignment */
+    align-items: center; /* Center vertically */
+    justify-content: center; /* Center horizontally */
+    gap: 2px; /* Reduce the gap between SVG and text */
+    color: rgba(255, 255, 255, 0.64); /* Text color */
+    white-space: nowrap; /* Prevent text wrapping */
+    text-align: center; /* Center text alignment */
+  }
+  
+  .felin-footer__additional-footer svg {
+    width: 12px; /* Adjust size if needed */
+    height: 12px; /* Adjust size if needed */
+  }
+  
+  .felin-footer__additional-link-row span {
+    white-space: nowrap; /* Prevent spans from wrapping */
+  }
+  
+  
+  @media only screen and (min-width: 840px) {
+    .felin-footer__list {
+      display: block; /* Ensure list is displayed */
+      opacity: 1; /* Fully visible */
+      max-height: none; /* Remove height constraint */
+      overflow: visible; /* Ensure content is visible */
+    }
+  
+    .felin-footer__arrow {
+      display: none; /* Hide arrow on larger screens */
+    }
+  }
+  
+  
+  @media only screen and (max-width: 839px) {
+    .felin-footer {
+      padding: 40px 10px 10px 10px;
+    }
+  
+    .felin-footer__content {
+      max-width: 100%;
+      width: 100%;
+    }
+  
+    .felin-footer__main {
+        flex-direction: column;
+        align-items: flex-start; /* Align main sections to the left */
+        gap: 2px;
+    }
+  
+    .felin-footer__arrow {
+      display: inline; /* Show arrow */
+    }
+  
+  
+    .felin-footer__section {
+        margin: 0 0;
+        width: 100%;
+        text-align: left; /* Align text to the left */
+        max-width: 100%;
+    }
+  
+    .felin-footer__title h3{
+      cursor: pointer;
+      color: white;
+      font-weight: 500;
+    }
+  
+  
+    .felin-footer__brand-logos {
+      display: flex;
+      flex-direction: row;
+      align-items: flex-start;
+      gap: 10px;
+      margin-bottom: 20px;
+    }
+  
+  
+    .felin-footer__title h3{
+      font-size: 14px;
+      margin: 0 0;
+    }
+  
+    .felin-footer__list {
+      display: none; 
+      margin-top: 8px;
+      flex-direction: column;
+    }
+
+    .felin-footer__list.open {
+      display: flex; 
+    }
+
+    .felin-footer__section.open .felin-footer__arrow {
+      transform: rotate(180deg); 
+    }
+  
+  
+    .felin-footer__item {
+      font-size: 10px;
+      font-weight: 500;
+    }
+    
+  
+    .felin-footer__additional-links {
+        width: 100%;
+        flex-direction: column;
+        align-items: flex-start; /* Align to the left */
+    }
+  
+    .felin-footer__additional-link-row {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      flex-wrap: wrap;
+      gap: 10px; /* Space between items */
+      font-size: 9px; /* Smaller font size */
+    }
+  
+    .felin-footer__additional-link-row span {
+      display: block; /* Ensure each span takes up the full width available */
+      text-align: left; /* Align text within each span to the left */
+      white-space: nowrap;
+    }
+  
+    .felin-footer__additional-footer {
+      order: 1;
+    }
+  
+    .felin-footer__item {
+        align-items: flex-start;
+        text-align: left; 
+    }
+  
+    .felin-footer__logo-image {
+      width: 100px;
+    }
+  }
+  

@@ -1,0 +1,132 @@
+/*---------------------------------------
+#. Small Header Home
+---------------------------------------*/
+
+/* BEM Element and Modifier */
+
+.felin-small-header-home {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 100; /* Ensure it's above other content */
+  padding: 1px 0 1px;
+  background-color: var(--transparent-color);
+  font-family: -apple-system, BlinkMacSystemFont, Roboto, "Segoe UI", Arimo, "Open Sans", sans-serif;
+  font-weight: 500;
+  backdrop-filter: blur(7.5px);
+  -webkit-backdrop-filter: blur(7.5px);
+  transition: box-shadow 0.3s ease;
+}
+
+.felin-small-header-home.with-shadow {
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.felin-small-header-home__wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 10px 10px;
+}
+
+.felin-small-header-home__wrapper_left {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.felin-header-home__menu__item a svg.icon {
+    width: 15px; 
+    height: 15px; 
+}
+
+.felin-small-header-home__wrapper_left span {
+  font-size: 13px; /* Adjust to your desired size */
+}
+
+.felin-btn.felin-btn__toggle-sidebar-home {
+  color: var(--dark-color);
+  background: transparent;
+  font-weight: bold; /* Ensures the text or icon is bold */
+  font-size: 26px; /* Increase the font size to make the icon bigger */
+}
+  
+.felin-small-header-home h1 {
+  font-size: 28px; 
+  font-weight: bold; 
+  margin-left: 5px; 
+  color: #000;
+}
+
+.felin-btn {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  gap: 10px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 12px 20px;
+  color: var(--body-color);
+  background-color: var(--gray-color);
+  border: none;
+  border-radius: 18px;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+/* .felin-btn.active, .felin-btn:hover {
+  color: var(--white-color);
+  background-color: var(--primary-color);
+} */
+
+@media only screen and (max-width: 1440px) {
+  .felin-btn {
+    font-size: 14px;
+  }
+}
+
+@media only screen and (max-width: 479px) {
+  .felin-btn {
+    padding: 10px 18px;
+  }
+  .felin-btn svg{
+    width: 16px;
+    height: 16px;
+  }
+}
+
+@media only screen and (max-width: 1199px) {
+  .felin-small-header-home {
+    display: block;
+  }
+}
+
+@media only screen and (min-width: 1199px) {
+  .felin-small-header-home {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 499px) {
+  .felin-small-header-home {
+    padding: 0 0 0;
+  }
+
+  .felin-small-header-home h1 {
+    font-size: 25px; 
+    font-weight: bold; 
+    margin: 0; 
+  }
+
+  .felin-small-header-home__wrapper_left span {
+    font-size: 13px; /* Adjust to your desired size */
+  }
+
+  .felin-small-header-home__wrapper {
+    padding: 6px 6px 6px;
+  }
+
+}

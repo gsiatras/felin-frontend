@@ -1,0 +1,99 @@
+/*---------------------------------------
+#. Fifth Page Home
+---------------------------------------*/
+
+/* BEM Element and Modifier */
+
+.felin-fifth-page {
+    background-color: var(--white-color); 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; 
+    margin-bottom: var(--margin-bottom-big);
+    font-family: -apple-system, BlinkMacSystemFont, Roboto, "Segoe UI", Arimo, "Open Sans", sans-serif;
+  }
+  
+  .felin-fifth-page__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    justify-content: center; 
+    margin-top: 60px;
+    text-align: center; 
+    width: 100%;
+  }
+  
+  .felin-fifth-page__first_content {
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    justify-content: center; 
+    margin-bottom: 80px;
+    max-width: 100%;
+    width: 100%;
+    text-align: center; 
+  }
+  
+  .felin-fifth-page__heading {
+    color: #000;
+    font-size: 44px;
+    font-weight: 700;
+    font-family: 'Geologica', -apple-system, BlinkMacSystemFont, Roboto, "Segoe UI", Arimo, "Open Sans", sans-serif; 
+    margin-bottom: 35px;
+  }
+  
+  .felin-fifth-page__text1 {
+    font-size: 18px;
+    color: rgba(32, 33, 37, 0.64);
+    font-family: -apple-system, BlinkMacSystemFont, Roboto, "Segoe UI", Arimo, "Open Sans", sans-serif;
+    margin-bottom: 20px;
+  }
+  
+  .felin-fifth-page__faq {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: var(--max-width); /* Ensure the FAQ section does not exceed 100% of the page width */
+    margin: 0 auto;
+    text-align: center; /* Center the text inside the FAQ section */
+  }
+  
+  
+  
+  
+  @media (max-width: 479px) {
+    .felin-fifth-page {
+      margin-bottom: var(--margin-bottom-small);
+    }
+    .felin-fifth-page__heading {
+      font-size: 26px;
+    }
+  
+    .felin-faq__heading {
+      font-size: 26px;
+    }
+  
+    .felin-faq__question {
+      font-size: 15px;
+    }
+  
+    .felin-faq__question svg {
+      font-size: 20px;
+    }
+  
+    .felin-faq__answer {
+      font-size: 13px;
+    }
+  
+    .felin-fifth-page__content {
+      max-width: var(--max-width);
+    }
+  
+    .felin-fifth-page__text1 {
+      font-size: 14.4px;
+    }
+    
+  }
+  

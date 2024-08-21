@@ -1,0 +1,200 @@
+/*---------------------------------  
+Sidebar Home
+---------------------------------------*/
+
+
+/* Existing styles remain the same */
+.felin-sidebar-home {
+  position: fixed; /* Absolute positioning relative to the parent container */
+  top: 75px; /* Align the top of the sidebar below the fixed header */
+  right: 20px; /* Space from the right */
+  width: 300px; /* Fixed width for the sidebar */
+  max-width: 80%; /* Maximum width to ensure it doesn't stretch too wide */
+  max-height: calc(100vh - 80px); /* Maximum height to fit below the header */
+  padding: 10px;
+  border: 1px solid var(--grayTwo-color); /* Border around the popup */
+  border-radius: 10px; /* Rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Shadow for popup effect */
+  background-color: var(--white-color);
+  overflow-y: auto; /* Add scrollbar if content exceeds the height */
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  z-index: 999; /* Lower z-index to ensure it stays below the header */
+  /* display: none;  */
+  font-family: -apple-system, BlinkMacSystemFont, Roboto, "Segoe UI", Arimo, "Open Sans", sans-serif;
+}
+
+
+.felin-sidebar-home.open {
+    display: block;
+  }
+
+.felin-sidebar-home::-webkit-scrollbar {
+  width: 0;
+}
+
+
+.felin-sidebar-home__menu-wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.felin-sidebar-home__menu {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  padding-left: 7px;
+}
+
+.felin-sidebar-home__menu__heading {
+  color: var(--grayThree-color); /* Gray color for headings */
+  font-size: 12px; /* Smaller font size for headings */
+  font-weight: normal; /* Normal weight for headings */
+  margin-bottom: 6px; /* Space below the heading */
+  pointer-events: none; /* Prevent clicking on headings */
+  padding-left: 1px;
+}
+
+.felin-sidebar-home__menu__item {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding-top: 3px;
+}
+
+svg.icon.rotated {
+  transform: rotate(180deg);
+  transition: transform 0.3s ease;
+}
+
+
+.felin-sidebar-home__menu__item:not(:last-child)::after {
+  content: '';
+  display: block;
+  border-bottom: 1px solid var(--grayTwo-color); /* Gray line after each section */
+  width: calc(100% + 30px); /* Extend the width to cover the full width including padding */
+  margin-left: -20px; /* Offset the padding from the parent container */
+  margin-top: 5px; /* Add some space between the content and the line if needed */
+}
+
+
+.felin-sidebar-home__menu__link {
+  display: flex;
+  align-items: center;
+  color: var(--dark-color);
+  padding: 3px 3px;
+  font-size: 13px; /* Adjusted font size */
+  line-height: 24px;
+  border-radius: 10px;
+  transition: all 0.3s ease;
+  font-weight: 500;
+}
+
+.felin-sidebar-home__menu__link:hover {
+  background: var(--gray-color);
+  color: var(--dark-color)
+}
+
+/* .felin-sidebar-home__menu__link.default-active,
+.felin-sidebar-home__menu__link.active {
+  color: var(--primary-color);
+  background: transparent;
+} */ 
+
+.felin-sidebar-home__menu__link svg path {
+  transition: all 0.3s ease;
+}
+
+.felin-sidebar-home__menu__link i {
+  font-size: 24px; /* Larger icon size */
+  color: var(--dark-color); /* Blacker color for icons */
+}
+
+.felin-sidebar-home__button-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  padding: 20px 0; /* Add some space above and below buttons */
+}
+
+
+.felin-sidebar-home__button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 60%;
+  padding: 10px 30px;
+  font-size: 16px;
+  color: var(--dark-color);
+  background: transparent;
+  border-radius: 50px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.felin-sidebar-home__button[href="signup"] {
+  color: var(--white-color);
+  background-color: var(--orange-color);
+  border: 2px solid var(--orange-color); /* Orange border for signup button */
+}
+
+.felin-sidebar-home__button:hover {
+  background: var(--purple-color);
+  color: var(--white-color);
+  border: 2px solid var(--white-color);
+}
+
+.felin-sidebar-home__menu__home {
+  font-weight: 700;
+  font-size: 13px;
+  padding-left: 7px;
+  padding-top: 5px;
+}
+
+
+.felin-sidebar-home__menu__home:hover {
+  color: black;
+}
+
+@media only screen and (max-width: 875px) {
+  .felin-sidebar-home {
+    top: 65px;
+  }
+
+  .felin-sidebar-home__menu__link {
+    font-size: 12px; /* Smaller font size for smaller screens */
+    padding: 3px 3px;
+  }
+  
+  .felin-sidebar-home__button {
+    padding: 8px 70px;
+    font-size: 12px;
+  }
+
+  .felin-sidebar-home__menu__heading {
+    font-size: 10px;
+    margin-bottom: 2px;
+    padding-top: 5px;
+  }
+}
+
+/* Adjustments for screens smaller than 480px */
+@media only screen and (max-width: 480px) {
+  .felin-sidebar-home {
+    width: calc(100% - 20px); /* Almost full width */
+    max-width: var(--max-width);
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  .felin-sidebar-home {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 550px) {
+  .felin-sidebar-home__button {
+    padding: 6px 40px;
+    font-size: 10px; /* Smaller font size for very small screens */
+  }
+}

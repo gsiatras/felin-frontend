@@ -1,0 +1,140 @@
+
+
+/*---------------------------------------
+#. Sixth Page Home
+---------------------------------------*/
+
+/* BEM Element and Modifier */
+
+.felin-sixth-page {
+  background-color: var(--white-color); 
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center; 
+  margin-bottom: var(--margin-bottom-big);
+  font-family: -apple-system, BlinkMacSystemFont, Roboto, "Segoe UI", Arimo, "Open Sans", sans-serif;
+}
+
+.felin-sixth-page__content {
+  display: flex;
+  flex-direction: column;
+  align-items: center; 
+  justify-content: center; 
+  margin-top: 60px;
+  max-width: 100%;
+  text-align: center; 
+}
+
+.felin-sixth-page__first_content {
+  display: flex;
+  flex-direction: column;
+  align-items: center; 
+  justify-content: center; 
+  margin-bottom: 80px;
+  max-width: 50%;
+  text-align: center; 
+}
+
+.felin-sixth-page__heading {
+  color: #000;
+  font-size: 44px;
+  font-weight: 700;
+  font-family: 'Geologica', -apple-system, BlinkMacSystemFont, Roboto, "Segoe UI", Arimo, "Open Sans", sans-serif; 
+  margin-bottom: 35px;
+}
+
+
+.felin-sixth-page__second_content {
+  width: 100%;
+  position: relative;
+  background-image: linear-gradient(to top, rgb(0, 194, 232) 20%, rgb(0, 194, 232) 85%, transparent 85%);
+  overflow: hidden; /* Ensures any overflow is clipped */
+  display: flex;
+  justify-content: center; /* Centers content horizontally */
+}
+
+.felin-sixth-page__media-container {
+  position: relative; /* Container to position children absolutely */
+  width: 100%;
+  height: auto;
+}
+
+.felin-sixth-page__second_content__video__wrapper {
+  display: flex;
+  align-items: flex-start;
+  -webkit-box-pack: center;
+  justify-content: center;
+  width: 100%;
+  position: absolute;
+}
+
+
+.felin-sixth-page__second_content__video {
+  position: absolute;
+  top: 1.55rem; /* Center vertically */
+  left: 51%; /* Center horizontally */
+  width: 55%; /* Adjust size as needed */
+  padding-top: 0%;
+  transform: translate(-50%); /* Center the video */
+  z-index: 0; 
+  overflow: hidden;
+}
+
+.felin-sixth-page__second_content__video video {
+  width: 100%; /* Make video fit the width of the container */
+  height: 100%; /* Make video fit the height of the container */
+  object-fit: cover; /* Maintain aspect ratio and cover the container */
+}
+
+.felin-sixth-page__second_content__tablet__wrapper {
+  position: relative;
+  width: 100%;
+  height: auto;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.felin-sixth-page__second_content__tablet {
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1
+}
+
+.felin-sixth-page__box-tablet-image {
+  position: relative;
+  width: 130%; /* Expand the image beyond its container's width */
+  height: auto;
+  max-width: none; /* Allow the width to exceed 100% */
+  transform: translateX(-11%); /* Centers the image by moving it left by 10% */
+  object-fit: cover; /* Maintains aspect ratio and covers the entire area */
+}
+
+.felin-sixth-page__text1 {
+  font-size: 18px;
+}
+
+
+
+@media (max-width: 479px) {
+  .felin-sixth-page__heading {
+    font-size: 26px;
+  }
+
+  .felin-sixth-page__first_content {
+    max-width: var(--max-width);
+  }
+
+  .felin-sixth-page {
+    margin-bottom: var(--margin-bottom-small);
+  }
+
+  .felin-sixth-page__text1 {
+    font-size: 14.4px;
+  }
+}
+
+
+
+

@@ -1,0 +1,147 @@
+
+/*---------------------------------------
+#. Second Page Home
+---------------------------------------*/
+
+/* BEM Element and Modifier */
+
+.felin-second-page {
+  margin-top: 40px;
+  background-color: var(--white-color); 
+  flex: 1; 
+  display: flex;
+  align-items: center;
+  justify-content: center; /* Center the content horizontally */
+  margin-bottom: var(--margin-bottom-big);
+}
+
+.felin-second-page__content {
+  display: flex;
+  flex-direction: column; /* Default to column layout for small screens */
+  max-width: none;
+  width: 100%; /* Make sure content takes full width */
+  text-align: center; /* Center text */
+  color: var(--dark-color); 
+  align-items: center; /* Center items horizontally */
+  margin-top: 60px;
+  margin-right: auto;
+  margin-left: auto; /* Center content horizontally */
+  font-family: -apple-system, BlinkMacSystemFont, Roboto, "Segoe UI", Arimo, "Open Sans", sans-serif;
+}
+
+.felin-second-page__main_content {
+  margin-bottom: 45px; /* Space between the main content and the video */
+  max-width: 80%;
+}
+
+.felin-second-page__heading {
+  color: #000;
+  font-size: 56.25px;
+  font-weight: 700;
+  font-family: 'Geologica', -apple-system, BlinkMacSystemFont, Roboto, "Segoe UI", Arimo, "Open Sans", sans-serif; /* Apply the Omnes font */
+  margin-bottom: 40px;
+  line-height: 1.1;
+}
+
+.bolder {
+  font-size: 96.25px;
+}
+
+.felin-second-page__text1 {
+  font-family: -apple-system, BlinkMacSystemFont, Roboto, "Segoe UI", Arimo, "Open Sans", sans-serif;
+  margin-top: 15px;
+  margin-bottom: 35px;
+  color: var(--home-text-color);
+  font-weight: 400;
+  font-size: 18px;
+}
+
+.smaller {
+  font-size: 14px;
+}
+
+
+.felin-second-page__video {
+  width: 100%;
+  position: relative;
+  height: 30vw;
+  min-height: 17.5rem;
+  max-height: calc((var(--content-width) + 18.75rem) * 0.3);
+}
+
+.felin-second-page__video video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  background-position-x: 50%;
+  background-position-y: 50%;
+}
+
+.video-control-button {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: var(--orange-color);
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  z-index: 10; /* Ensure it's above the video */
+}
+
+.video-control-button svg {
+  color: #fff; /* White icon color */
+}
+
+
+
+
+/* Media Queries for Responsiveness */
+
+@media only screen and (max-width: 1199px) {
+  .felin-second-page__heading {
+    font-size: 54.25px;
+  }
+
+  .bolder {
+    font-size: 83.25px;
+  }
+}
+
+@media only screen and (max-width: 479px) {
+  .felin-second-page {
+    margin-top: 0;
+  }
+
+  .felin-second-page__heading {
+    font-size: 36.8px;
+  }
+
+  .bolder {
+    font-size: 58.25px;
+  }
+
+  .felin-second-page__content {
+    margin-top: 70px;
+  }
+
+  .felin-second-page__text1 {
+    margin-bottom: 20px;
+    font-size: 14.4px;
+  }
+
+  .felin-second-page__main_content {
+    margin-bottom: 20px;
+    max-width: var(--max-width);
+  }
+
+  .felin-second-page {
+    margin-bottom: var(--margin-bottom-small);
+    max-width: 100%;
+  }
+
+}
