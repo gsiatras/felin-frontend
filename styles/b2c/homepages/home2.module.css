@@ -1,0 +1,79 @@
+.felin-second-page {
+    background-color: var(--white-color); 
+    flex: 1; 
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+    margin-bottom: var(--margin-bottom-big);
+    font-family: -apple-system, BlinkMacSystemFont, Roboto, "Segoe UI", Arimo, "Open Sans", sans-serif;
+}
+
+.felin-second-page__content {
+    display: flex;
+    flex-direction: column; 
+    max-width: var(--max-width); 
+    width: 100%; 
+    text-align: flex-start;
+    color: var(--dark-color); 
+    align-items: flex-start; 
+    margin-top: var(--margin-top-small);
+    max-width: var(--max-width-b2c);
+}
+
+.felin-second-page__content__upper {
+    max-width: var(--max-width);
+    margin-bottom: 30px;
+}
+
+.felin-second-page__content__upper h1 {
+    font-family: 'Geologica', -apple-system, BlinkMacSystemFont, Roboto, "Segoe UI", Arimo, "Open Sans", sans-serif;
+    font-size: 49px;
+}
+
+.felin-second-page__content__lower {
+    width: 100%; 
+    display: flex;
+    flex-direction: column; 
+}
+
+.felin-second-page__content__lower h1 {
+    font-weight: 500;
+    font-size: 28px;
+}
+
+
+@media only screen and (max-width: 639px) {
+    .felin-second-page__content {
+
+        margin-top: 0;
+    }
+    .felin-second-page__content__upper h1 {
+        font-size: 32px;
+    }
+
+    .felin-second-page__content__lower h1 {
+        font-size: 20px;
+    }
+
+    .felin-second-page {
+        margin-bottom: var(--margin-bottom-mid);
+    }
+
+    
+}
+
+
+@media only screen and (max-width: 479px) {
+    .felin-second-page__content__lower h1 {
+        font-size: 18px;
+    }
+
+    .felin-second-page__content__upper h1 {
+        font: 30px;
+    }
+
+    .felin-second-page {
+        margin-bottom: var(--margin-bottom-small);
+    }
+
+}

@@ -3,28 +3,71 @@
 import React, { useState, useRef, useEffect } from 'react';
 import styles from '../../styles/b2c/header.module.css'; 
 
-const Header = () => {
+const Header = ({ onBlurToggle }) => {
   const [isFocused, setIsFocused] = useState(false);
   const [searchText, setSearchText] = useState('');
   const headerRef = useRef(null);
+  const [openSubmenu, setOpenSubmenu] = useState(null);
+  const [isTop, setIsTop] = useState(true);
 
-  // Close search bar when clicking outside the header
+
+  const handleFocus = () => {
+    setIsFocused(true);
+    onBlurToggle(true); // Activate blur effect
+  };
+
+  const handleBlur = () => {
+    // Use setTimeout to allow the blur event to complete before removing blur
+    setTimeout(() => {
+      setIsFocused(false);
+      onBlurToggle(false); // Deactivate blur effect
+    }, 200); // Adjust delay if needed
+  };
+
+
+  // Ref to the menu container
+  const menuRef = useRef(null);
+
+  // Toggle the submenu based on the clicked menu item
+  const toggleSubmenu = (submenuId) => {
+    setOpenSubmenu(prevSubmenu => 
+      prevSubmenu === submenuId ? null : submenuId
+    );
+  };
+
+
+  // Close menu when clicking outside of it
   useEffect(() => {
     const handleClickOutside = (event) => {
       if (headerRef.current && !headerRef.current.contains(event.target)) {
         setIsFocused(false);
       }
+      if (menuRef.current && !menuRef.current.contains(event.target)) {
+        setOpenSubmenu(null);
+      }
     };
 
-    document.addEventListener("mousedown", handleClickOutside);
-
+    document.addEventListener('mousedown', handleClickOutside);
     return () => {
-      document.removeEventListener("mousedown", handleClickOutside);
+      document.removeEventListener('mousedown', handleClickOutside);
     };
-  }, [headerRef]);
+  }, [headerRef, menuRef]);
+
+
+  // Check if header is at the top of the screen
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsTop(window.scrollY === 0);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
 
   return (
-    <header className={styles["felin-header-home"]} ref={headerRef}>
+    <header className={`${styles["felin-header-home"]} ${!isTop ? styles["header-scrolled"] : ''}`} ref={headerRef}>
         <div className={styles["felin-header-home__content"]}>
             <div className={styles["felin-header-home__wrapper"]}>
                 <nav className={styles["felin-header-home__menu-wrapper"]}>
@@ -61,8 +104,8 @@ const Header = () => {
                         name="search" 
                         placeholder="Αναζήτηση στη FELiN..." 
                         className={styles["felin-header-home__search-input"]}
-                        onFocus={() => setIsFocused(true)}
-                        // onBlur={() => setTimeout(() => setIsFocused(false), 200)}
+                        onFocus={handleFocus}
+                        onBlur={handleBlur}
                         onChange={(e) => setSearchText(e.target.value)} 
                         value={searchText}
                       />
@@ -95,10 +138,48 @@ const Header = () => {
                     </a>
                     <svg className={`${styles["close-icon"]} ${isFocused ? styles["show"] : ''}`} onClick={() => setTimeout(() => setIsFocused(false), 200)} width="24px" height="24px" viewBox="0 0 24 24" fill="none"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <circle cx="12" cy="12" r="9" fill="rgba(32, 33, 37, 0.12)" fill-opacity="0.24"></circle> <path d="M16 8L8 16" stroke="#222222" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"></path> <path d="M8 8L16 16" stroke="#222222" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg>
                 </nav>
+                <nav className={`${styles["felin-header-home__menu-wrapper"]} ${styles["right-nav"]} ${styles["small-nav"]}`}>
+                  <li className={`${styles["felin-header-home__menu__item"]} ${styles["has-children"]}`} id="user" ref={menuRef} >
+                      <div className={`${styles["felin-header-home__user-menu"]} ${isFocused ? styles["hide"] : ''}`} onClick={() => toggleSubmenu('user')}>
+                        <div className={styles["felin-header-home__user-menu__icon"]}>
+                          <img className={styles["felin-header-home__user-menu__icon__image"]} src='img/no-user.jpg'></img>
+                        </div>
+                        <svg className={styles["felin-header-home__user-menu__arrow"]} width="16px" height="16px" viewBox="0 0 1024 1024" version="1.1">
+                              <path d="M903.232 256l56.768 50.432L512 768 64 306.432 120.768 256 512 659.072z" fill="#000000" />
+                        </svg>  
+                      </div>
+                      <ul className={`${styles["felin-header-home__submenu"]} ${styles["more_items"]} ${openSubmenu === 'user' ? styles["open"] : styles["submenu-hidden"]}`}>
+                          <li className={styles["felin-header-home__submenu__item"]}>
+                              <a href="index" className={styles["felin-header-home__menu__link"]}>Σύνδεση ή Εγγραφή</a>
+                          </li>
+                          <li className={styles["felin-header-home__submenu__item"]}>
+                              <a href="index-2" className={styles["felin-header-home__menu__link"]}>Γλώσσα: Ελληνικά</a>
+                          </li>
+                          <li className={styles["felin-header-home__submenu__item"]}>
+                              <a href="index-2" className={styles["felin-header-home__menu__link"]}>Υποστήριξη</a>
+                          </li>
+                      </ul>
+                  </li>
+                  <svg className={`${styles["close-icon"]} ${isFocused ? styles["show"] : ''}`} onClick={() => setTimeout(() => setIsFocused(false), 200)} width="24px" height="24px" viewBox="0 0 24 24" fill="none"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <circle cx="12" cy="12" r="9" fill="rgba(32, 33, 37, 0.12)" fill-opacity="0.24"></circle> <path d="M16 8L8 16" stroke="#222222" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"></path> <path d="M8 8L16 16" stroke="#222222" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg>
+                </nav>
             </div>
             <div className={`${styles["felin-header-home__search-content"]} ${isFocused ? styles["show"] : ''}`}>
                 Search results
             </div>
+            <li className={`${styles["felin-header-home__menu__item"]} ${styles["location2"]} ${isFocused ? styles["hide"] : ''} ${!isTop ? styles["hide"] : ''}`} >
+              <a className={`${styles["felin-header-home__menu__link"]} ${styles["location"]}`}>
+                <div className={styles["felin-header-home__menu__link__location-pin"]}>
+                  <svg fill="#000000" height="16px" width="16px" viewBox="0 0 32 32">
+                    <circle cx="16" cy="13" r="2"></circle>
+                    <path d="M16,3C10.5,3,6,7.5,6,13c0,8.4,9,15.5,9.4,15.8c0.2,0.1,0.4,0.2,0.6,0.2s0.4-0.1,0.6-0.2C17,28.5,26,21.4,26,13C26,7.5,21.5,3,16,3z M16,17c-2.2,0-4-1.8-4-4s1.8-4,4-4s4,1.8,4,4S18.2,17,16,17z"></path>
+                  </svg>                              
+                </div>
+                <span>Ρόδος</span>
+                <svg className="icon" width="16px" height="16px" viewBox="0 0 1024 1024" version="1.1">
+                  <path d="M903.232 256l56.768 50.432L512 768 64 306.432 120.768 256 512 659.072z" fill="#000000" />
+                </svg>
+              </a>  
+            </li>
         </div>
     </header>
   );

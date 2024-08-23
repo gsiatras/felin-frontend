@@ -14,6 +14,11 @@
   font-family: -apple-system, BlinkMacSystemFont, Roboto, "Segoe UI", Arimo, "Open Sans", sans-serif;
   font-weight: 500;
   transition: box-shadow 0.3s ease;
+  border-bottom: 1px solid lightgray;
+}
+
+.felin-header-home.header-scrolled {
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2); /* Stronger shadow when scrolled */
 }
 
 .felin-header-home.with-shadow {
@@ -54,7 +59,7 @@
 .felin-header-home__menu-wrapper.middle {
   flex: 1 1 auto;
   justify-content: center;
-  position: relative;
+  /* position: relative; */
 }
 
 
@@ -176,6 +181,7 @@
   transition: width 0.3s ease;
   width: 30%;
   max-width: 100%;
+  min-width: 200px;
 }
 
 .felin-header-home__search-input {
@@ -276,8 +282,281 @@
   display: none;
 }
 
+
+.felin-header-home__menu-wrapper.right-nav.small-nav{
+  display: none;
+}
+
+
+.felin-header-home__user-menu {
+  background-color: lightgray;
+  border-radius: 40px;
+  padding: 4px ;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.felin-header-home__user-menu__icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 12px;
+}
+
+.felin-header-home__user-menu__icon__image {
+  border-radius: 50%;
+  border: 2px solid white;
+  width: 30px; /* Adjust the size as needed */
+  height: 30px; /* Adjust the size as needed */
+  object-fit: cover; /* Ensure the image is fully contained within the circle */
+}
+
+.felin-header-home__user-menu__arrow {
+  padding-right: 5px;
+  fill: #000; 
+  width: 23px;
+  height: 23px;
+  stroke-width: 2;
+  stroke: #000;
+}
+
+.felin-header-home__menu__item {
+  position: relative;
+  padding-left: 10px;
+}
+
+.felin-header-home__submenu {
+  position: absolute;
+  top: 140%;
+  left: 0;
+  padding: 10px 0 10px 0;
+  background-color: var(--white-color);
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1), 
+              0 0 10px rgba(128, 128, 128, 0.5); 
+  z-index: 1;
+  opacity: 0;
+  visibility: hidden;
+  display: inline-grid;
+  grid-template-columns: 1fr; /* Allow the submenu to adjust its width */
+  grid-auto-flow: row; /* Ensure items stack vertically */
+  gap: 3rem;
+  row-gap: 7.5px;
+  list-style: none;
+  margin: 0;
+  justify-content: flex-start;
+  transition: transform 0.3s ease, opacity 0.3s ease, visibility 0.3s ease;
+  overflow: visible; /* Ensure items are not hidden and submenu expands */
+  min-width: 100px;
+  width: auto; /* Allows the width to grow with content */
+}
+
+.felin-header-home__submenu.open {
+  visibility: visible;
+  opacity: 1;
+}
+
+.more_items{
+  right: 0;
+  left: auto;
+  transform-origin: top right;
+}
+
+
+.felin-header-home__submenu__item a {
+  display: block; 
+  white-space: nowrap; 
+  overflow: visible;
+  text-align: left;
+  font-size: 15px;
+  font-weight: 300;
+  color: rgb(32, 33, 37);
+  transition: all 0.3s ease;
+  width: 100%;
+  padding-left: 20px;
+  padding-right: 20px;
+  margin: 0 5px 0 5px;
+}
+
+.felin-header-home__submenu__item a:hover{
+  background-color: var(--sec-color);
+  border-radius: 10px;
+  color: rgb(32, 33, 37);
+}
+
+.felin-header-home__menu__link {
+  cursor: pointer;
+}
+
+.felin-header-home__submenu .felin-header-home__menu__link {
+  width: auto;
+  cursor: pointer;
+}
+
+.felin-header-home__submenu__item:first-of-type::after {
+  content: '';
+  display: block;
+  margin: 10px 0; /* Remove left/right margins for full-width */
+  border-bottom: 1px solid lightgray;
+  width: 100%; /* Ensure the line spans the full width */
+}
+
+.felin-header-home__menu__item.location2 {
+  display: none;
+  margin-right: auto; 
+  align-items: center;
+  padding-left: 20px;
+}
+
 @media only screen and (max-width: 1440px) {
   .felin-header-home__menu__link.livechat {
     font-size: 8px;
+  }
+}
+
+@media only screen and (max-width: 1199px) {
+  .felin-header-home__menu-wrapper.right-nav {
+    display: none;
+  }
+
+  .felin-header-home__menu-wrapper.right-nav.small-nav{
+    display: flex;
+  }
+
+  .felin-header-home__search-form {
+    margin-right: 60px;
+  }
+
+  .felin-header-home__user-menu.hide{
+    display: none;
+  }
+
+  .felin-header-home__search-form.focused{
+    margin-right: 0;
+  }
+}
+
+@media only screen and (max-width: 639px) {
+  .felin-header-home__user-menu__arrow{
+    display: none;
+  }
+
+  .felin-header-home__user-menu__icon {
+    margin-right: 0;
+  }
+
+  .felin-header-home__user-menu__icon__image {
+    width: 36px; /* Adjust the size as needed */
+    height: 36px; /* Adjust the size as needed */
+  }
+
+  .felin-header-home__menu__item.location {
+    display: none;
+  }
+
+  .felin-header-home__menu__item.location2 {
+    display: flex;
+  }
+
+  .felin-header-home__menu__item.location2.hide {
+    display: none;
+  }
+
+
+  .felin-header-home__wrapper {
+    height: auto; 
+    display: flex;
+    align-items: center;
+    padding: 5px 22px 0;
+  }
+
+  .felin-header-home__search-form.focused {
+    width: 55%;
+  }
+
+  .felin-header-home__search-form {
+    margin-right: 10px;
+  }
+  
+}
+
+
+@media only screen and (max-width: 499px) {
+  .felin-header-home__search-form.focused {
+    width: 45%;
+  }
+
+  .felin-header-home__user-menu__icon__image {
+    width: 34px; /* Adjust the size as needed */
+    height: 34px; /* Adjust the size as needed */
+  }
+
+  .felin-header-home__menu-wrapper h1 {
+    font-size: 26px;
+  }
+
+  
+
+  .felin-header-home__menu-wrapper:last-of-type {
+    padding-bottom: 0;
+  }
+
+  .felin-header-home__wrapper {
+    padding: 0 14px 0;
+  }
+
+  .felin-header-home__menu-wrapper.right-nav .close-icon {
+    width: 34px; 
+    height: 34px;
+  }
+
+  .felin-header-home__search-input {
+    max-width: 100%;
+    width: 100%;
+  }
+
+  .felin-header-home__search-form {
+    padding: 3px 20px 3px 10px;
+    width: 45%;
+    min-width: 35%;
+  }
+
+  .felin-header-home__submenu__item a {
+    font-size: 13px;
+  }
+
+}
+
+@media only screen and (max-width: 399px) {
+  .felin-header-home__search-form.focused {
+    width: 40%;
+  }
+
+  .felin-header-home__search-form {
+    padding: 2px 14px 2px 6px;
+    width: 40%;
+    min-width: 35%;
+  }
+
+  .felin-header-home__menu-wrapper h1 {
+    font-size: 20px;
+  }
+
+  .felin-header-home__user-menu__icon__image {
+    width: 28px; /* Adjust the size as needed */
+    height: 28px; /* Adjust the size as needed */
+  }
+  .felin-header-home__wrapper {
+    padding: 0 12px 0;
+  }
+
+  .felin-header-home__search-input {
+    padding: 4px 0px 4px 0; 
+    font-size: 12px;
+  }
+
+  .felin-header-home__menu__item.location2 {
+    padding-left: 10px;
   }
 }

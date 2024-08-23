@@ -55,8 +55,12 @@
   --page-three-color-purple: #faf1f7;
 
   --max-width: 90%;
+  --max-width-b2c: 95%;
   --margin-bottom-big: 80px;
-  --margin-bottom-small: 40px;
+  --margin-bottom-small: 26px;
+  --margin-bottom-mid: 40px;
+  --margin-top-big: 100px;
+  --margin-top-mid: 80px;
 }
 
 
@@ -138,6 +142,31 @@ body {
 .felin-home-page__button:hover {
   color: var(--white-color); 
 }
+
+body.felin-dashboard.blur-active {
+  overflow: hidden;
+  position: relative;
+}
+
+body.felin-dashboard.blur-active .felin-main-content-home {
+  position: relative;
+  filter: blur(5px);
+  transition: filter 0.3s ease;
+  z-index: 1;
+}
+
+body.felin-dashboard.blur-active .felin-main-content-home::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.5);
+  pointer-events: none;
+  z-index: 1000;
+}
+
 
 /* .felin-btn.active, .felin-btn:hover {
   color: var(--white-color);
