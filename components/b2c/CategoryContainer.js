@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from '../../styles/b2c/categoryContainer.module.css'; // Adjust path as needed
+import styles from '../../styles/b2c/categoryContainer.module.css'; 
 
 const CategoryContainer = ({ imageSrc, title, count }) => {
   return (

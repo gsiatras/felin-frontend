@@ -9,9 +9,12 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@aws-amplify/adapter-nextjs": "^1.2.17",
     "@emotion/react": "^11.13.3",
     "@emotion/styled": "^11.13.0",
+    "@heroicons/react": "^2.1.5",
     "@mui/material": "^5.16.7",
+    "aws-amplify": "^6.6.0",
     "hls.js": "^1.5.15",
     "mui": "^0.0.1",
     "next": "14.2.5",
@@ -21,6 +24,7 @@
     "swiper": "^11.1.10"
   },
   "devDependencies": {
+    "@next/swc-darwin-arm64": "^14.2.8",
     "eslint": "^8",
     "eslint-config-next": "14.2.5"
   }

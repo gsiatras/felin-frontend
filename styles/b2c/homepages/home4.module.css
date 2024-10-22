@@ -1,0 +1,88 @@
+
+/*---------------------------------------
+#. Fourth Page Home
+---------------------------------------*/
+
+/* BEM Element and Modifier */
+
+.felin-fourth-page {
+    background-color: var(--white-color); 
+    flex: 1; 
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+    margin-bottom: var(--margin-bottom-big);
+    font-family: -apple-system, BlinkMacSystemFont, Roboto, "Segoe UI", Arimo, "Open Sans", sans-serif;
+}
+
+.felin-fourth-page__content {
+    display: flex;
+    flex-direction: column; 
+    max-width: var(--max-width); 
+    width: 100%; 
+    text-align: flex-start;
+    color: var(--dark-color); 
+    align-items: flex-start; 
+    margin-top: var(--margin-top-mid);
+    max-width: var(--max-width-b2c);
+}
+
+.felin-fourth-page__content__upper {
+    max-width: var(--max-width);
+    margin-bottom: 30px;
+}
+
+.felin-fourth-page__content__upper h1 {
+    font-family: 'Geologica', -apple-system, BlinkMacSystemFont, Roboto, "Segoe UI", Arimo, "Open Sans", sans-serif;
+    font-size: 49px;
+}
+
+.felin-fourth-page__content__lower {
+    width: 100%; 
+    display: flex;
+    flex-direction: column; 
+}
+
+.felin-fourth-page__content__lower h1 {
+    font-weight: 500;
+    font-size: 28px;
+}
+
+
+@media only screen and (max-width: 639px) {
+    .felin-fourth-page__content {
+        margin-top: var(--margin-top-big);
+    }
+    .felin-fourth-page__content__upper h1 {
+        font-size: 26px;
+    }
+
+    .felin-fourth-page__content__lower h1 {
+        font-size: 20px;
+    }
+
+    .felin-fourth-page {
+        margin-bottom: var(--margin-bottom-mid);
+    }
+
+}
+
+
+@media only screen and (max-width: 479px) {
+    .felin-fourth-page__content__lower h1 {
+        font-size: 18px;
+    }
+
+    .felin-fourth-page__content__upper h1 {
+        font: 30px;
+    }
+
+    .felin-fourth-page__content__upper {
+        margin-bottom: 15px;
+    }
+
+    .felin-fourth-page {
+        margin-bottom: var(--margin-bottom-small);
+    }
+
+}
