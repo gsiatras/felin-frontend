@@ -1,9 +1,9 @@
 import { NextRequest, NextResponse } from "next/server";
 import { cookies } from "next/headers";
 
-const userPoolClientId = String(process.env.NEXT_PUBLIC_FELIN_USER_POOL_CLIENT_ID);
-const cognitoDomain = String(process.env.NEXT_PUBLIC_FELIN_COGNITO_DOMAIN);
-
+const userPoolId = String(process.env.PUBLIC_FELIN_USER_POOL_ID);
+const userPoolClientId = String(process.env.PUBLIC_FELIN_USER_POOL_CLIENT_ID);
+const cognitoDomain = String(process.env.PUBLIC_FELIN_COGNITO_DOMAIN);
 export async function GET(request) {
     const cookieStore = cookies(); // Access the cookies
 

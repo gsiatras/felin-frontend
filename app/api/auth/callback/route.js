@@ -5,6 +5,10 @@ const userPoolId = String(process.env.PUBLIC_FELIN_USER_POOL_ID);
 const userPoolClientId = String(process.env.PUBLIC_FELIN_USER_POOL_CLIENT_ID);
 const cognitoDomain = String(process.env.PUBLIC_FELIN_COGNITO_DOMAIN);
 
+console.log('User Pool ID:', userPoolId);
+console.log('User Pool Client ID:', userPoolClientId);
+console.log('Cognito Domain:', cognitoDomain);
+
 export async function GET(request) {
     try {
         const origin = request.nextUrl.origin;
