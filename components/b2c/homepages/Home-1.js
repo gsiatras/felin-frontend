@@ -31,7 +31,7 @@ const Home1 = () => {
         <div className={styles["felin-first-page"]}>
             <div className={styles["felin-first-page__content"]}>
                 <div className={styles["felin-first-page__content__upper"]}>
-                    <h1>Καταστήματα Β2Β 1</h1>
+                    <h1>Καταστήματα Β2Β</h1>
                 </div>
                 <div className={styles["felin-first-page__content__lower"]}>
                     <Carousel 
