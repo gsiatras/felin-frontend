@@ -15,7 +15,8 @@ export async function GET(request) {
   const origin = request.nextUrl.origin;
 
   const state = crypto.randomBytes(16).toString('hex');
-
+ 
+  
   authorizeParams.append('response_type', 'code');
   authorizeParams.append('client_id', userPoolClientId);
   authorizeParams.append('redirect_uri', `${origin}/api/auth/callback`);
