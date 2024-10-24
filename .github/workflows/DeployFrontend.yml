@@ -22,6 +22,9 @@ jobs:
       - name: Install dependencies
         run: npm install
 
+      - name: Check installed packages
+        run: npm list @testing-library/jest-dom
+      
       - name: Run tests
         run: npm test
 
