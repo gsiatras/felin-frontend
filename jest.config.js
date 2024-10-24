@@ -5,11 +5,14 @@ const createJestConfig = nextJest({
 });
 
 const customJestConfig = {
+  transform: {
+    '^.+\\.(js|jsx|ts|tsx)$': 'babel-jest', // Use babel-jest for JS/TS files
+  },
   transformIgnorePatterns: [
-    "/node_modules/(?!swiper)"
+    "/node_modules/(?!swiper)" // Transform the swiper module
   ],
-  testEnvironment: 'jsdom',
-  setupFilesAfterEnv: ['<rootDir>/jest.setup.js'], // Add your setup file here if needed
+  testEnvironment: 'jsdom', // Use jsdom for testing
+  setupFilesAfterEnv: ['<rootDir>/jest.setup.js'], // Setup file for additional configuration
   moduleNameMapper: {
     '\\.(css|less|scss|sass)$': 'identity-obj-proxy', // Mock CSS imports
   },
