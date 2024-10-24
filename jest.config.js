@@ -5,6 +5,9 @@ const createJestConfig = nextJest({
 });
 
 const customJestConfig = {
+  transformIgnorePatterns: [
+    "/node_modules/(?!swiper)"
+  ],
   testEnvironment: 'jsdom',
   setupFilesAfterEnv: ['<rootDir>/jest.setup.js'], // Add your setup file here if needed
   moduleNameMapper: {
