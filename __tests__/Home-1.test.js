@@ -1,6 +1,6 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
-import Home1 from '@/components/merchant/homepages/Home1'; // Adjust the import path as necessary
+import Home1 from "@/components/merchant/homepages/Home-1";
 import '@testing-library/jest-dom/extend-expect'; // For additional matchers
 
 describe('Home1 Component', () => {
