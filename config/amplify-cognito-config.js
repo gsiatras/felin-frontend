@@ -4,8 +4,8 @@ import { Amplify } from "aws-amplify";
 
 const authConfig = {
     Cognito: {
-        userPoolId: String(process.env.NEXT_PUBLIC_FELIN_USER_POOL_ID),
-        userPoolClientId: String(process.env.NEXT_PUBLIC_FELIN_USER_POOL_CLIENT_ID),
+        userPoolId: String(process.env.PUBLIC_FELIN_USER_POOL_ID),
+        userPoolClientId: String(process.env.PUBLIC_FELIN_USER_POOL_CLIENT_ID),
     }
 };
 
