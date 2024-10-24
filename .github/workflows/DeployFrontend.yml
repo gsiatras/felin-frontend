@@ -12,6 +12,19 @@ env:
   ECS_FRONTEND_SERVICE: ${{ vars.ECS_FRONTEND_SERVICE }}
 
 jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Run tests
+        run: npm test
+        
   deploy:
     runs-on: ubuntu-latest
 
