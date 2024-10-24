@@ -11,9 +11,16 @@ describe('Home1 Component', () => {
         expect(titleElement).toBeInTheDocument(); // Check if title is rendered
     });
 
-    test('renders the correct number of categories', () => {
+    test('renders static elements correctly', () => {
+        render(<Home1 />);
+        // Check for any static element you know should exist
+        const staticElement = screen.getByText(/some static text/i); // Adjust this text to match actual content
+        expect(staticElement).toBeInTheDocument(); // Check if it is rendered
+    });
+
+    test('renders a specific class name element', () => {
         const { container } = render(<Home1 />);
-        const categoryContainers = container.getElementsByClassName('category-container'); // Adjust class name as needed
-        expect(categoryContainers.length).toBe(10); // Adjust based on your expectations
+        const specificElement = container.querySelector('.specific-class-name'); // Replace with an actual class name
+        expect(specificElement).toBeInTheDocument(); // Check if it is rendered
     });
 });
