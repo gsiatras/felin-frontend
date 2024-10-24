@@ -1,15 +1,12 @@
+// jest.config.js
 module.exports = {
-  testEnvironment: 'jsdom',
-  moduleNameMapper: {
-    // Handle CSS imports (sass, less, etc.)
-    '\\.(css|less|scss)$': 'identity-obj-proxy',
-    // Handle image imports
-    '\\.(png|jpg|jpeg|gif|svg)$': '<rootDir>/__mocks__/fileMock.js',
-  },
-  setupFilesAfterEnv: ['<rootDir>/jest.setup.js'], // Specify the setup file
+  preset: 'next/babel', // Use Next.js preset
+  testEnvironment: 'jsdom', // Use jsdom environment
+  setupFilesAfterEnv: ['<rootDir>/jest.setup.js'], // Specify setup file
   transform: {
-    // Use babel-jest to transpile tests
-    '^.+\\.(js|jsx|ts|tsx)$': 'babel-jest',
+    '^.+\\.(js|jsx|ts|tsx)$': 'babel-jest', // Use babel-jest for transforming files
   },
-  testPathIgnorePatterns: ['/node_modules/', '/.next/'], // Ignore Next.js build directory
+  moduleNameMapper: {
+    '\\.(css|less|scss|sass)$': 'identity-obj-proxy', // Mock CSS imports
+  },
 };
